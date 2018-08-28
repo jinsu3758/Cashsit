@@ -1,0 +1,216 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\2c84f02dbde2a2c04f3364599ea78def\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\7c39e7dedb4485ba11d997588e213d2b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7ee7ef4c15310e4a45f8cc13522ce307\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\efe3b132637bec3da363c37219d196b4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\8707b3c5c60a393976c2ba6070ddf1b4\AndroidManifest.xml:2:1-7:12
+MERGED from [jp.wasabeef:glide-transformations:3.3.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\glide-transformations-3.3.0.aar\029efc544a156441b627b6281588be68\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\912a6ed32e08f8366269fb7799ec47f2\AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\6bbcd799fb16a8a50fbbe3e92c387a5a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\12bed7f8119cfd390572b7e5719a2697\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\aa02855bac0b629fdf77bc904be274f3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2b456abfa82609ed79b818dafc721904\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\336703c58967eae65eb40636cac2d3bb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\1d8a972d3b690245a6c83743be2b7e55\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\07cb102563121049949d71c8d474d055\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\5204a289606d9707498db514e8374a88\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\ae00eb6f032f25f0093731541c084d1b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5bf3b6f166276abf7b85e2fae5030ece\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\d4b6042366d2a7eb6114fc5ce18b4aae\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\50c106ba62fde52c33962d3e1a771aee\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8d1373bc55880c45613ac54b5d657994\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\060b076b9a99e7c5e2849ba627d8e714\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+	package
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:1-56:12
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.BLUETOOTH
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:5:5-68
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:5:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:6:5-74
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:6:22-71
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:7:22-64
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:8:22-72
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:9:22-76
+application
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:11:5-54:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7ee7ef4c15310e4a45f8cc13522ce307\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7ee7ef4c15310e4a45f8cc13522ce307\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\912a6ed32e08f8366269fb7799ec47f2\AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\912a6ed32e08f8366269fb7799ec47f2\AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\5204a289606d9707498db514e8374a88\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\5204a289606d9707498db514e8374a88\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:19:9-35
+	android:label
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:16:9-41
+	android:hardwareAccelerated
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:14:9-44
+	android:roundIcon
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:18:9-43
+	android:largeHeap
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:17:9-33
+	android:icon
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:15:9-38
+	android:allowBackup
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:20:9-41
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:12:9-47
+activity#com.example.jinsu.cash.activity.LoginActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:21:9-30:20
+	android:launchMode
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:23:13-43
+	android:theme
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:24:13-51
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:22:13-51
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:25:13-29:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:28:17-77
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:28:27-74
+activity#com.example.jinsu.cash.activity.MainActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:31:9-34:47
+	android:launchMode
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:33:13-44
+	android:theme
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:34:13-44
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:32:13-50
+activity#com.example.jinsu.cash.activity.SignInActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:35:9-61
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:35:19-58
+activity#com.example.jinsu.cash.activity.ShopActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:36:9-59
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:36:19-56
+activity#com.example.jinsu.cash.activity.DeviceListActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:37:9-65
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:37:19-62
+activity#com.example.jinsu.cash.activity.MyPageActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:38:9-40:47
+	android:theme
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:40:13-44
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:39:13-52
+activity#com.example.jinsu.cash.activity.DefaultActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:41:9-62
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:41:19-59
+activity#com.example.jinsu.cash.activity.ChartActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:42:9-44:47
+	android:theme
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:44:13-44
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:43:13-51
+service#com.example.jinsu.cash.util.SitService
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:46:9-48:39
+	android:exported
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:48:13-36
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:47:13-44
+activity#com.example.jinsu.cash.activity.RankActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:50:9-52:47
+	android:theme
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:52:13-44
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:51:13-50
+activity#com.example.jinsu.cash.activity.PopUpActivity
+ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:53:9-69
+	android:name
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml:53:19-57
+uses-sdk
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\2c84f02dbde2a2c04f3364599ea78def\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\2c84f02dbde2a2c04f3364599ea78def\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\7c39e7dedb4485ba11d997588e213d2b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\7c39e7dedb4485ba11d997588e213d2b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7ee7ef4c15310e4a45f8cc13522ce307\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7ee7ef4c15310e4a45f8cc13522ce307\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\efe3b132637bec3da363c37219d196b4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\efe3b132637bec3da363c37219d196b4\AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\8707b3c5c60a393976c2ba6070ddf1b4\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\8707b3c5c60a393976c2ba6070ddf1b4\AndroidManifest.xml:5:5-43
+MERGED from [jp.wasabeef:glide-transformations:3.3.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\glide-transformations-3.3.0.aar\029efc544a156441b627b6281588be68\AndroidManifest.xml:7:5-9:41
+MERGED from [jp.wasabeef:glide-transformations:3.3.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\glide-transformations-3.3.0.aar\029efc544a156441b627b6281588be68\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\912a6ed32e08f8366269fb7799ec47f2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\912a6ed32e08f8366269fb7799ec47f2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\6bbcd799fb16a8a50fbbe3e92c387a5a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\6bbcd799fb16a8a50fbbe3e92c387a5a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\12bed7f8119cfd390572b7e5719a2697\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\12bed7f8119cfd390572b7e5719a2697\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\aa02855bac0b629fdf77bc904be274f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\aa02855bac0b629fdf77bc904be274f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2b456abfa82609ed79b818dafc721904\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2b456abfa82609ed79b818dafc721904\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\336703c58967eae65eb40636cac2d3bb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\336703c58967eae65eb40636cac2d3bb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\1d8a972d3b690245a6c83743be2b7e55\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\1d8a972d3b690245a6c83743be2b7e55\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\07cb102563121049949d71c8d474d055\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\07cb102563121049949d71c8d474d055\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\5204a289606d9707498db514e8374a88\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\5204a289606d9707498db514e8374a88\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\ae00eb6f032f25f0093731541c084d1b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\ae00eb6f032f25f0093731541c084d1b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5bf3b6f166276abf7b85e2fae5030ece\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5bf3b6f166276abf7b85e2fae5030ece\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\d4b6042366d2a7eb6114fc5ce18b4aae\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\d4b6042366d2a7eb6114fc5ce18b4aae\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\50c106ba62fde52c33962d3e1a771aee\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\50c106ba62fde52c33962d3e1a771aee\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8d1373bc55880c45613ac54b5d657994\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8d1373bc55880c45613ac54b5d657994\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\060b076b9a99e7c5e2849ba627d8e714\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\jinsu\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\060b076b9a99e7c5e2849ba627d8e714\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\jinsu\AndroidStudioProjects\Cash\app\src\main\AndroidManifest.xml

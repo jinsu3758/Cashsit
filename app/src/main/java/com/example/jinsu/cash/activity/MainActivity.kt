@@ -38,6 +38,7 @@ import kotlinx.android.synthetic.main.navi_header.view.*
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var handler: Handler
+    lateinit var dialog: PopupDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +78,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         main_navi.setNavigationItemSelectedListener(this)
         Glide.with(this).load(R.drawable.my).apply(RequestOptions().circleCrop())
                 .into(main_navi.getHeaderView(0).navi_im_profile)
+        dialog = PopupDialog(this@MainActivity," ")
         handler = object : Handler() {
             override fun handleMessage(msg: Message) {
                 when(msg.what)
@@ -91,20 +93,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     //기댄 자세
                     2 ->
                     {
-                        val dialog = PopupDialog(this@MainActivity, "뒤로 기댄 자세입니다.")
+                     //   val dialog = PopupDialog(this@MainActivity, "뒤로 기댄 자세입니다.")
+                        if(dialog.isShowing()) {
+                            dialog.dismiss()
+
+                        }
+                        dialog = PopupDialog(this@MainActivity,"기댄 자세입니다.")
                         dialog.show()
                         dialog.setClick {
                             dialog.dismiss();
                         }
                         Log.d("MainActivity","기댄자세")
-
                     }
                     //숙인 자세
                     3 ->
-                    { val dialog = PopupDialog(this@MainActivity, "앞으로 숙인 자세입니다.")
+                    {
+                        //val dialog = PopupDialog(this@MainActivity, "앞으로 숙인 자세입니다.")
+                        if(dialog.isShowing()) {
+                            dialog.dismiss()
+                        }
+                        dialog = PopupDialog(this@MainActivity,"앞으로 숙인 자세입니다.")
                         dialog.show()
                         dialog.setClick {
-                            dialog.dismiss();
+                            dialog.dismiss()
                         }
                         Log.d("MainActivity","숙인자세")
 
@@ -112,7 +123,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     //다리 꼰 자세
                     4 ->
                     {
-                        val dialog = PopupDialog(this@MainActivity, "왼쪽 다리를 꼰 자세입니다.")
+                     //   val dialog = PopupDialog(this@MainActivity, "왼쪽 다리를 꼰 자세입니다.")
+                        if(dialog.isShowing()) {
+                            dialog.dismiss()
+
+                        }
+                        dialog = PopupDialog(this@MainActivity,"왼쪽 다리를 꼰 상태입니다.")
                         dialog.show()
                         dialog.setClick {
                             dialog.dismiss();
@@ -121,7 +137,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     }
                     //다리 꼰 자세
                     5 ->
-                    { val dialog = PopupDialog(this@MainActivity, "오른쪽 다리를 꼰 자세입니다.")
+                    {
+                        //val dialog = PopupDialog(this@MainActivity, "오른쪽 다리를 꼰 자세입니다.")
+                        if(dialog.isShowing()) {
+                            dialog.dismiss()
+
+                        }
+                        dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
                         dialog.show()
                         dialog.setClick {
                             dialog.dismiss();
@@ -183,5 +205,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeMessages(0)
+    }
 }

@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
+import android.speech.tts.TextToSpeech
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -15,6 +16,7 @@ import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.jinsu.cash.R
+import com.example.jinsu.cash.R.id.*
 import com.example.jinsu.cash.common.Constant
 import com.example.jinsu.cash.dialog.PopupDialog
 import com.example.jinsu.cash.util.BluetoothService
@@ -27,11 +29,16 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import kotlinx.android.synthetic.main.activity_chart.*
 import kotlinx.android.synthetic.main.content_chart.*
 import kotlinx.android.synthetic.main.content_chart.view.*
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.navi_header.view.*
+import java.lang.ref.WeakReference
+import java.util.*
 
 
 class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    lateinit var handler: Handler
+    lateinit var handler: MyHandler
+    lateinit var dialog: PopupDialog
+    lateinit var tts : TextToSpeech
 
     lateinit var chart_entries : ArrayList<Entry>
     lateinit var chart_entries2 : ArrayList<Entry>
@@ -64,63 +71,6 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
         initActivity()
         initListener()
         initChart()
-        handler = object : Handler() {
-            override fun handleMessage(msg: Message) {
-                when(msg.what)
-                {
-                //바른자세
-                    1 ->
-                    {
-                        Log.d("MainActivity","바른자세")
-
-                    }
-                //기댄 자세
-                    2 ->
-                    {
-                        val dialog = PopupDialog(this@ChartActivity, "뒤로 기댄 자세입니다.")
-                        dialog.show()
-                        dialog.setClick {
-                            dialog.dismiss();
-                        }
-                        Log.d("MainActivity","기댄자세")
-
-                    }
-                //숙인 자세
-                    3 ->
-                    { val dialog = PopupDialog(this@ChartActivity, "앞으로 숙인 자세입니다.")
-                        dialog.show()
-                        dialog.setClick {
-                            dialog.dismiss();
-                        }
-                        Log.d("MainActivity","숙인자세")
-
-                    }
-                //다리 꼰 자세
-                    4 ->
-                    {
-                        val dialog = PopupDialog(this@ChartActivity, "왼쪽 다리를 꼰 자세입니다.")
-                        dialog.show()
-                        dialog.setClick {
-                            dialog.dismiss();
-                        }
-                        Log.d("MainActivity","왼쪾자세")
-                    }
-                //다리 꼰 자세
-                    5 ->
-                    { val dialog = PopupDialog(this@ChartActivity, "오른쪽 다리를 꼰 자세입니다.")
-                        dialog.show()
-                        dialog.setClick {
-                            dialog.dismiss();
-                        }
-                        Log.d("MainActivity","오른자세")
-
-                    }
-                }
-
-            }
-        }
-        BluetoothService.get.setHandler(handler)
-
 
     }
 
@@ -145,6 +95,10 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
             Log.d("main_at",user!!.nickname)
             chart_navi.getHeaderView(0).navi_txt_id.setText(user!!.id.toString())
         }
+        tts = TextToSpeech(this, TextToSpeech.OnInitListener {
+            tts.language = Locale.KOREAN
+        })
+        handler = MyHandler(this)
 
     }
 
@@ -425,5 +379,99 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
         }
         chart_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    class MyHandler : Handler
+    {
+        lateinit var weak : WeakReference<ChartActivity>
+
+        constructor(activity : ChartActivity)
+        {
+            weak = WeakReference<ChartActivity>(activity)
+        }
+
+        override fun handleMessage(msg: Message) {
+            val activity : ChartActivity = weak.get()!!
+            activity.handlerMessage(msg)
+        }
+    }
+
+    fun handlerMessage(msg : Message)
+    {
+        when(msg.what)
+        {
+        //바른자세
+            1 ->
+            {
+                main_txt_point.text = Constant.money.toString();
+                Log.d("MainActivity","바른자세")
+
+            }
+        //기댄 자세
+            2 ->
+            {
+                tts.speak("기대지 마세요", TextToSpeech.QUEUE_FLUSH,null,null)
+                if(dialog.isShowing()) {
+                    dialog.dismiss()
+
+                }
+                dialog = PopupDialog(this@ChartActivity,"기댄 자세입니다.")
+                dialog.show()
+                dialog.setClick {
+                    dialog.dismiss();
+                }
+            }
+        //숙인 자세
+            3 ->
+            {
+                tts.speak("숙이지 마세요!", TextToSpeech.QUEUE_FLUSH,null,null)
+                //val dialog = PopupDialog(this@MainActivity, "앞으로 숙인 자세입니다.")
+                if(dialog.isShowing()) {
+                    dialog.dismiss()
+                }
+                dialog = PopupDialog(this@ChartActivity,"앞으로 숙인 자세입니다.")
+                dialog.show()
+                dialog.setClick {
+                    dialog.dismiss()
+                }
+
+            }
+        //다리 꼰 자세
+            4 ->
+            {
+                tts.speak("다리 꼬지 마세요", TextToSpeech.QUEUE_FLUSH,null,null)
+                //   val dialog = PopupDialog(this@MainActivity, "왼쪽 다리를 꼰 자세입니다.")
+                if(dialog.isShowing()) {
+                    dialog.dismiss()
+
+                }
+                dialog = PopupDialog(this@ChartActivity,"왼쪽 다리를 꼰 상태입니다.")
+                dialog.show()
+                dialog.setClick {
+                    dialog.dismiss();
+                }
+            }
+        //다리 꼰 자세
+            5 ->
+            {
+                tts.speak("다리 꼬지 마세요", TextToSpeech.QUEUE_FLUSH,null,null)
+                //val dialog = PopupDialog(this@MainActivity, "오른쪽 다리를 꼰 자세입니다.")
+                if(dialog.isShowing()) {
+                    dialog.dismiss()
+
+                }
+                dialog = PopupDialog(this@ChartActivity,"오른쪽 다리를 꼰 상태입니다.")
+                dialog.show()
+                dialog.setClick {
+                    dialog.dismiss();
+                }
+
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeMessages(0)
     }
 }

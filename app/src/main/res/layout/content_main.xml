@@ -29,6 +29,7 @@
 
         >
         <ImageView
+            android:id="@+id/im_posture"
             android:layout_width="171dp"
             android:layout_height="171dp"
             android:layout_centerInParent="true"

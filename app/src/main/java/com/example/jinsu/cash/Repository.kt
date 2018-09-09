@@ -2,6 +2,7 @@ package com.example.jinsu.cash
 
 import android.util.Log
 import com.example.jinsu.cash.common.Constant
+import com.example.jinsu.cash.model.Rank
 import com.example.jinsu.cash.model.User
 import com.example.jinsu.cash.network.RetroService
 import retrofit2.Call
@@ -34,6 +35,29 @@ object Repository {
         retroService = retrofit.create(RetroService::class.java)
     }
 
+    fun getRank(calback : ((ArrayList<Rank>) -> Unit))
+    {
+        val call = retroService!!.getRankList()
+        call.enqueue(object : Callback<ArrayList<Rank>>
+        {
+            override fun onResponse(call: Call<ArrayList<Rank>>?, response: Response<ArrayList<Rank>>?) {
+
+                val list = response!!.body()
+
+                if (list != null) {
+                    calback.invoke(list)
+                    Log.d("class Repository","성공 " + list.get(0).nickname)
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<Rank>>?, t: Throwable?) {
+                Log.d("class Repository","실패 + " + t!!.message)
+            }
+        }
+        )
+
+
+    }
     fun setUser(id : String,  pw : String, nickname : String,
                  uuid : String,  profile_img : String,  id_group : Int)
     {

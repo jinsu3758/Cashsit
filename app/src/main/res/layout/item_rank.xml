@@ -46,12 +46,23 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@id/rank_layout_star"
-        android:layout_marginRight="43dp"
+        android:layout_toLeftOf="@id/rank_txt_min"
         android:layout_marginLeft="19dp"
         android:text="피카츄"
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
+        />
+    <TextView
+        android:id="@+id/rank_txt_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_toLeftOf="@id/rank_layout_star"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="43dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:text="분"
         />
     <LinearLayout
         android:id="@+id/rank_layout_star"

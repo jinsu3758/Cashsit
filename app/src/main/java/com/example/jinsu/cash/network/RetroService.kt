@@ -1,5 +1,6 @@
 package com.example.jinsu.cash.network
 
+import com.example.jinsu.cash.model.Rank
 import com.example.jinsu.cash.model.User
 import retrofit2.Call
 import retrofit2.http.*
@@ -27,6 +28,8 @@ interface RetroService {
     @GET("/postCardKey")
     abstract fun getMyGift(@Query("card_key") card_key: String): Call<ArrayList<Gift>>*/
 
+    @GET("/controller/getRank")
+    fun getRankList() : Call<ArrayList<Rank>>
     @GET("/user")
     fun getUser(): Call<User>
 

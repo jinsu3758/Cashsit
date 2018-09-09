@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.util.Log
+import com.example.jinsu.cash.activity.MainActivity
 import com.example.jinsu.cash.common.Constant
 import java.io.IOException
 import java.io.InputStream
@@ -53,6 +54,10 @@ class BluetoothService private constructor()  {
 
 
     fun setHandler(handler: Handler) {
+        this.handler = handler
+    }
+
+    fun setHandler(handler: MainActivity.MyHandler) {
         this.handler = handler
     }
 

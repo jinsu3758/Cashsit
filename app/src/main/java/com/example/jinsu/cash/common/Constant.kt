@@ -26,6 +26,6 @@ object Constant {
     var bt_check : Boolean = true
 
     lateinit var prefs : MySharedPreferences
-    val BASE_URL = "http://13.209.7.229:8080/"
+    val BASE_URL = "http://52.78.218.216:8080/"
 
 }

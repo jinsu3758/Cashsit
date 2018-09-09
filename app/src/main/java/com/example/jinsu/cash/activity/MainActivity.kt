@@ -1,26 +1,18 @@
 package com.example.jinsu.cash.activity
 
 import android.annotation.SuppressLint
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
-import android.support.annotation.RequiresApi
+import android.speech.tts.TextToSpeech
 import android.support.design.widget.NavigationView
-import android.support.v4.app.NotificationCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.MenuItem
-import android.widget.RemoteViews
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.jinsu.cash.R
@@ -28,25 +20,24 @@ import com.example.jinsu.cash.common.Constant
 import com.example.jinsu.cash.dialog.PopupDialog
 import com.example.jinsu.cash.util.BluetoothService
 import com.example.jinsu.cash.util.CircleAnimation
-import kotlinx.android.synthetic.main.activity_default.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.content_main.view.*
 import kotlinx.android.synthetic.main.navi_header.view.*
+import java.lang.ref.WeakReference
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var handler: Handler
     lateinit var dialog: PopupDialog
+    lateinit var tts : TextToSpeech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         init()
-
-
     }
 
     override fun onResume() {
@@ -79,93 +70,115 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         Glide.with(this).load(R.drawable.my).apply(RequestOptions().circleCrop())
                 .into(main_navi.getHeaderView(0).navi_im_profile)
         dialog = PopupDialog(this@MainActivity," ")
-        handler = object : Handler() {
-            override fun handleMessage(msg: Message) {
-                when(msg.what)
-                {
-                    //바른자세
-                    1 ->
-                    {
-                        main_txt_point.text = Constant.money.toString();
-                        Log.d("MainActivity","바른자세")
 
-                    }
-                    //기댄 자세
-                    2 ->
-                    {
-                     //   val dialog = PopupDialog(this@MainActivity, "뒤로 기댄 자세입니다.")
-                        if(dialog.isShowing()) {
-                            dialog.dismiss()
+        handler = MyHandler(this)
+        tts = TextToSpeech(this, TextToSpeech.OnInitListener {
+            tts.language = Locale.KOREAN
+        })
 
-                        }
-                        dialog = PopupDialog(this@MainActivity,"기댄 자세입니다.")
-                        dialog.show()
-                        dialog.setClick {
-                            dialog.dismiss();
-                        }
-                        Log.d("MainActivity","기댄자세")
-                    }
-                    //숙인 자세
-                    3 ->
-                    {
-                        //val dialog = PopupDialog(this@MainActivity, "앞으로 숙인 자세입니다.")
-                        if(dialog.isShowing()) {
-                            dialog.dismiss()
-                        }
-                        dialog = PopupDialog(this@MainActivity,"앞으로 숙인 자세입니다.")
-                        dialog.show()
-                        dialog.setClick {
-                            dialog.dismiss()
-                        }
-                        Log.d("MainActivity","숙인자세")
 
-                    }
-                    //다리 꼰 자세
-                    4 ->
-                    {
-                     //   val dialog = PopupDialog(this@MainActivity, "왼쪽 다리를 꼰 자세입니다.")
-                        if(dialog.isShowing()) {
-                            dialog.dismiss()
-
-                        }
-                        dialog = PopupDialog(this@MainActivity,"왼쪽 다리를 꼰 상태입니다.")
-                        dialog.show()
-                        dialog.setClick {
-                            dialog.dismiss();
-                        }
-                        Log.d("MainActivity","왼쪾자세")
-                    }
-                    //다리 꼰 자세
-                    5 ->
-                    {
-                        //val dialog = PopupDialog(this@MainActivity, "오른쪽 다리를 꼰 자세입니다.")
-                        if(dialog.isShowing()) {
-                            dialog.dismiss()
-
-                        }
-                        dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
-                        dialog.show()
-                        dialog.setClick {
-                            dialog.dismiss();
-                        }
-                        Log.d("MainActivity","오른자세")
-
-                    }
-                }
-
-            }
-        }
-        BluetoothService.get.setHandler(handler)
         if(Constant.prefs.user_data != null)
         {
             val user = Constant.prefs.user_data
             Log.d("main_at",user!!.nickname)
             main_navi.getHeaderView(0).navi_txt_id.setText(user!!.id.toString())
             content_main.main_txt_point.setText(user!!.point.toString())
+
+        }
+
+
+    }
+
+    class MyHandler : Handler
+    {
+        lateinit var weak : WeakReference<MainActivity>
+
+        constructor(activity : MainActivity)
+        {
+            weak = WeakReference<MainActivity>(activity)
+        }
+
+        override fun handleMessage(msg: Message) {
+            val activity : MainActivity = weak.get()!!
+            activity.handlerMessage(msg)
         }
     }
 
+    fun handlerMessage(msg : Message)
+    {
 
+        when(msg.what)
+        {
+        //바른자세
+            1 ->
+            {
+                main_txt_point.text = Constant.money.toString();
+                Log.d("MainActivity","바른자세")
+
+            }
+        //기댄 자세
+            2 ->
+            {
+                tts.speak("기대지 마세요",TextToSpeech.QUEUE_FLUSH,null,null)
+                //   val dialog = PopupDialog(this@MainActivity, "뒤로 기댄 자세입니다.")
+                if(dialog.isShowing()) {
+                    dialog.dismiss()
+
+                }
+                dialog = PopupDialog(this@MainActivity,"기댄 자세입니다.")
+                dialog.show()
+                dialog.setClick {
+                    dialog.dismiss();
+                }
+            }
+        //숙인 자세
+            3 ->
+            {
+                tts.speak("숙이지 마세요!",TextToSpeech.QUEUE_FLUSH,null,null)
+                //val dialog = PopupDialog(this@MainActivity, "앞으로 숙인 자세입니다.")
+                if(dialog.isShowing()) {
+                    dialog.dismiss()
+                }
+                dialog = PopupDialog(this@MainActivity,"앞으로 숙인 자세입니다.")
+                dialog.show()
+                dialog.setClick {
+                    dialog.dismiss()
+                }
+
+            }
+        //다리 꼰 자세
+            4 ->
+            {
+                tts.speak("다리 꼬지 마세요",TextToSpeech.QUEUE_FLUSH,null,null)
+                //   val dialog = PopupDialog(this@MainActivity, "왼쪽 다리를 꼰 자세입니다.")
+                if(dialog.isShowing()) {
+                    dialog.dismiss()
+
+                }
+                dialog = PopupDialog(this@MainActivity,"왼쪽 다리를 꼰 상태입니다.")
+                dialog.show()
+                dialog.setClick {
+                    dialog.dismiss();
+                }
+            }
+        //다리 꼰 자세
+            5 ->
+            {
+                tts.speak("다리 꼬지 마세요",TextToSpeech.QUEUE_FLUSH,null,null)
+                //val dialog = PopupDialog(this@MainActivity, "오른쪽 다리를 꼰 자세입니다.")
+                if(dialog.isShowing()) {
+                    dialog.dismiss()
+
+                }
+                dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
+                dialog.show()
+                dialog.setClick {
+                    dialog.dismiss();
+                }
+
+            }
+        }
+    }
     override fun onBackPressed() {
         if (main_layout.isDrawerOpen(GravityCompat.START)) {
             main_layout.closeDrawer(GravityCompat.START)
@@ -179,10 +192,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         {
             R.id.menu_nav_home ->
             {
-
-                /*val intent = Intent(this,PopUpActivity::class.java)
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                startActivity(intent)*/
             }
             R.id.menu_nav_mypage ->
             {
@@ -208,5 +217,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onDestroy() {
         super.onDestroy()
         handler.removeMessages(0)
+        tts.stop()
+        tts.shutdown()
     }
 }

@@ -151,11 +151,13 @@ class SignInActivity : AppCompatActivity(),BluetoothCallback, SignInContract.VIe
 
         sign_btn_default.setOnClickListener()
         {
+            /*
             if (BluetoothService.get.deviceState) {
                 Log.d("sign_in","OnclickListener")
                 BluetoothService.get.enableBluetooth()
-            }//자동로그인 시 블루투스 잡기
-//            startActivity(Intent(this,DefaultActivity::class.java))
+            }
+            *///자동로그인 시 블루투스 잡기
+            startActivity(Intent(this,DefaultActivity::class.java))
         }
 
         //아이디 중복확인 버튼

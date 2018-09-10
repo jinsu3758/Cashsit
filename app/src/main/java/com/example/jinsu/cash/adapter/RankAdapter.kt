@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.RequestManager
 import com.example.jinsu.cash.R
-import com.example.jinsu.cash.common.Constant
 import com.example.jinsu.cash.model.Rank
 
 class RankAdapter(val list: ArrayList<Rank>, val glide: RequestManager) : RecyclerView.Adapter<RankAdapter.ViewHolder>() {
@@ -24,7 +23,7 @@ class RankAdapter(val list: ArrayList<Rank>, val glide: RequestManager) : Recycl
         holder.rank_name!!.text = list[position].nickname
         holder.rank_sum!!.text = list[position].good_time
         glide.load(R.drawable.star).into(holder.im_star)
-        glide.load(Constant.BASE_URL + "controller " + list[position].profile_img).into(holder.im_profile)
+        glide.load(list[position].profile_img).into(holder.im_profile)
 
 
     }

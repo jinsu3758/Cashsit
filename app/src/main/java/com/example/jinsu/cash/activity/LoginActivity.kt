@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.example.jinsu.cash.R
+import com.example.jinsu.cash.R.id.*
 import com.example.jinsu.cash.common.Constant
 import com.example.jinsu.cash.contract.LoginContract
 import com.example.jinsu.cash.presenter.LoginPresenter
@@ -78,6 +79,8 @@ class LoginActivity : AppCompatActivity(),LoginContract.VIew,BluetoothCallback {
         {
             BluetoothService.get.enableBluetooth()
         }
+
+
 
 
 

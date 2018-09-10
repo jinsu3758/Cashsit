@@ -22,6 +22,9 @@ object Constant {
     var Right_time : Int = 0
     var money : Int = 300
 
+    var right_posture : Int = 0
+    var bad_posture : Int = 0
+
     var d_check : Boolean = false
     var bt_check : Boolean = true
 

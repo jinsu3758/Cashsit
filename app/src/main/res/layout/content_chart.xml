@@ -51,6 +51,13 @@
                 android:visibility="invisible"
                 >
             </com.github.mikephil.charting.charts.LineChart>
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/month_chart"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:visibility="invisible"
+                >
+            </com.github.mikephil.charting.charts.LineChart>
 
 
         </FrameLayout>

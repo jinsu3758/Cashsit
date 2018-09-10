@@ -1,6 +1,7 @@
 package com.example.jinsu.cash.activity
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -26,7 +27,6 @@ import kotlinx.android.synthetic.main.content_main.view.*
 import kotlinx.android.synthetic.main.navi_header.view.*
 import java.lang.ref.WeakReference
 import java.util.*
-import android.app.Activity
 
 
 
@@ -52,7 +52,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     @SuppressLint("ResourceAsColor")
     fun setAnimation()
     {
-        val animation = CircleAnimation(content_main.main_circle,260, 80)
+        Constant.right_posture = Constant.Right_time  / 86400 * 360
+        Constant.bad_posture = Constant.bad_time *  86400 * 360
+        val animation = CircleAnimation(content_main.main_circle,Constant.right_posture, Constant.bad_posture)
         animation.duration = 3000
         content_main.main_circle.startAnimation(animation)
 //        main_toolbar.navigationIcon = getDrawable(R.drawable.menu)
@@ -137,7 +139,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 }
                 if (!(this as Activity).isFinishing) {
-                    dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
+                    dialog = PopupDialog(this@MainActivity,"뒤로 기댄 자세입니다.")
                     dialog.show()
                     dialog.setClick {
                         dialog.dismiss();
@@ -157,7 +159,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     dialog.dismiss()
                 }
                 if (!(this as Activity).isFinishing) {
-                    dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
+                    dialog = PopupDialog(this@MainActivity,"앞으로 숙인 자세입니다.")
                     dialog.show()
                     dialog.setClick {
                         dialog.dismiss();
@@ -179,7 +181,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 }
                 if (!(this as Activity).isFinishing) {
-                    dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
+                    dialog = PopupDialog(this@MainActivity,"왼쪽 다리를 꼰 상태입니다.")
                     dialog.show()
                     dialog.setClick {
                         dialog.dismiss();

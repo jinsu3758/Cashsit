@@ -1,5 +1,6 @@
 package com.example.jinsu.cash.activity
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -16,7 +17,6 @@ import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.jinsu.cash.R
-import com.example.jinsu.cash.R.id.*
 import com.example.jinsu.cash.common.Constant
 import com.example.jinsu.cash.dialog.PopupDialog
 import com.example.jinsu.cash.util.BluetoothService
@@ -46,6 +46,12 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
     lateinit var chart_entries4 : ArrayList<Entry>
     lateinit var chart_entries5 : ArrayList<Entry>
 
+    lateinit var month_chart_entries : ArrayList<Entry>
+    lateinit var month_chart_entries2 : ArrayList<Entry>
+    lateinit var month_chart_entries3 : ArrayList<Entry>
+    lateinit var month_chart_entries4 : ArrayList<Entry>
+    lateinit var month_chart_entries5 : ArrayList<Entry>
+
 
     lateinit var chart_dataset : LineDataSet
     lateinit var chart_dataset2 : LineDataSet
@@ -53,11 +59,19 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
     lateinit var chart_dataset4 : LineDataSet
     lateinit var chart_dataset5 : LineDataSet
 
+    lateinit var month_dataset : LineDataSet
+    lateinit var month_dataset2 : LineDataSet
+    lateinit var month_dataset3 : LineDataSet
+    lateinit var month_dataset4 : LineDataSet
+    lateinit var month_dataset5 : LineDataSet
+
 
     lateinit var line_data_list : ArrayList<ILineDataSet>
+    lateinit var month_data_list : ArrayList<ILineDataSet>
 
 
     lateinit var chart_data : LineData
+    lateinit var month_data : LineData
 
     lateinit var day_pie_entries : ArrayList<PieEntry>
     lateinit var day_pie_dataset : PieDataSet
@@ -118,6 +132,7 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
             chart.animateY(3000)
             chart.invalidate()
             chart_day_pie.visibility = View.INVISIBLE
+            month_chart.visibility = View.INVISIBLE
         }
 
         chart_btn_day.setOnClickListener()
@@ -126,6 +141,7 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
             chart_btn_month.background = getDrawable(R.drawable.border_btn_right_round)
             chart_btn_week.background = getDrawable(R.drawable.border_btn_center)
             chart.visibility = View.INVISIBLE
+            month_chart.visibility = View.INVISIBLE
             chart_day_pie.visibility = View.VISIBLE
             chart_day_pie.animateY(3000)
             chart_day_pie.invalidate()
@@ -136,10 +152,11 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
             chart_btn_day.background = getDrawable(R.drawable.border_btn_left_round)
             chart_btn_month.background = getDrawable(R.drawable.border_btn_right_round_pressed)
             chart_btn_week.background = getDrawable(R.drawable.border_btn_center)
-            chart.visibility = View.VISIBLE
-            chart.animateY(3000)
-            chart.invalidate()
+            month_chart.visibility = View.VISIBLE
+            month_chart.animateY(3000)
+            month_chart.invalidate()
             chart_day_pie.visibility = View.INVISIBLE
+            chart.visibility = View.INVISIBLE
         }
 
     }
@@ -250,6 +267,78 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
         chart_entries5.add(Entry(6f,13f))
         chart_entries5.add(Entry(7f,11f))
 
+
+        month_chart_entries = ArrayList<Entry>()
+        month_chart_entries.add(Entry(1f,20f))
+        month_chart_entries.add(Entry(2f,20.5f))
+        month_chart_entries.add(Entry(3f,21f))
+        month_chart_entries.add(Entry(4f,21.1f))
+        month_chart_entries.add(Entry(5f,22.5f))
+        month_chart_entries.add(Entry(6f,21f))
+        month_chart_entries.add(Entry(7f,23f))
+        month_chart_entries.add(Entry(8f,23.5f))
+        month_chart_entries.add(Entry(9f,25f))
+        month_chart_entries.add(Entry(10f,26f))
+        month_chart_entries.add(Entry(11f,27.8f))
+        month_chart_entries.add(Entry(12f,28f))
+
+        month_chart_entries2 = ArrayList<Entry>()
+        month_chart_entries2.add(Entry(1f,30f))
+        month_chart_entries2.add(Entry(2f,29f))
+        month_chart_entries2.add(Entry(3f,28.5f))
+        month_chart_entries2.add(Entry(4f,28.3f))
+        month_chart_entries2.add(Entry(5f,28.1f))
+        month_chart_entries2.add(Entry(6f,28f))
+        month_chart_entries2.add(Entry(7f,29f))
+        month_chart_entries2.add(Entry(8f,28f))
+        month_chart_entries2.add(Entry(9f,27.5f))
+        month_chart_entries2.add(Entry(10f,26.5f))
+        month_chart_entries2.add(Entry(11f,26f))
+        month_chart_entries2.add(Entry(12f,25.9f))
+
+        month_chart_entries3 = ArrayList<Entry>()
+        month_chart_entries3.add(Entry(1f,34f))
+        month_chart_entries3.add(Entry(2f,32f))
+        month_chart_entries3.add(Entry(3f,30f))
+        month_chart_entries3.add(Entry(4f,30f))
+        month_chart_entries3.add(Entry(5f,36f))
+        month_chart_entries3.add(Entry(6f,35f))
+        month_chart_entries3.add(Entry(7f,34f))
+        month_chart_entries3.add(Entry(8f,32f))
+        month_chart_entries3.add(Entry(9f,32f))
+        month_chart_entries3.add(Entry(10f,30f))
+        month_chart_entries3.add(Entry(11f,28f))
+        month_chart_entries3.add(Entry(12f,25f))
+
+        month_chart_entries4 = ArrayList<Entry>()
+        month_chart_entries4.add(Entry(1f,50f))
+        month_chart_entries4.add(Entry(2f,47f))
+        month_chart_entries4.add(Entry(3f,46.5f))
+        month_chart_entries4.add(Entry(4f,46f))
+        month_chart_entries4.add(Entry(5f,47f))
+        month_chart_entries4.add(Entry(6f,43f))
+        month_chart_entries4.add(Entry(7f,40f))
+        month_chart_entries4.add(Entry(8f,39f))
+        month_chart_entries4.add(Entry(9f,37f))
+        month_chart_entries4.add(Entry(10f,32f))
+        month_chart_entries4.add(Entry(11f,30f))
+        month_chart_entries4.add(Entry(12f,29f))
+
+        month_chart_entries5 = ArrayList<Entry>()
+        month_chart_entries5.add(Entry(1f,18f))
+        month_chart_entries5.add(Entry(2f,17f))
+        month_chart_entries5.add(Entry(3f,19f))
+        month_chart_entries5.add(Entry(4f,20f))
+        month_chart_entries5.add(Entry(5f,16f))
+        month_chart_entries5.add(Entry(6f,16f))
+        month_chart_entries5.add(Entry(7f,17f))
+        month_chart_entries5.add(Entry(8f,18f))
+        month_chart_entries5.add(Entry(9f,15f))
+        month_chart_entries5.add(Entry(10f,13f))
+        month_chart_entries5.add(Entry(11f,12f))
+        month_chart_entries5.add(Entry(12f,13f))
+
+
         chart_dataset = LineDataSet(chart_entries,"")
         chart_dataset.color = Color.rgb(25,197,154)
         chart_dataset.setCircleColor(Color.rgb(25,197,154))
@@ -280,6 +369,35 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
         chart_dataset5.lineWidth = 1f
         chart_dataset5.circleRadius = 5f
 
+        month_dataset = LineDataSet(month_chart_entries,"")
+        month_dataset.color = Color.rgb(25,197,154)
+        month_dataset.setCircleColor(Color.rgb(25,197,154))
+        month_dataset.lineWidth = 1f
+        month_dataset.circleRadius = 5f
+
+        month_dataset2 = LineDataSet(month_chart_entries2,"")
+        month_dataset2.color = Color.rgb(38,168,236)
+        month_dataset2.setCircleColor(Color.rgb(38,168,236))
+        month_dataset2.lineWidth = 1f
+        month_dataset2.circleRadius = 5f
+
+        month_dataset3 = LineDataSet(month_chart_entries3,"")
+        month_dataset3.color = Color.rgb(112,94,176)
+        month_dataset3.setCircleColor(Color.rgb(112,94,176))
+        month_dataset3.lineWidth = 1f
+        month_dataset3.circleRadius = 5f
+
+        month_dataset4 = LineDataSet(month_chart_entries4,"")
+        month_dataset4.color = Color.rgb(163,96,254)
+        month_dataset4.setCircleColor(Color.rgb(163,96,254))
+        month_dataset4.lineWidth = 1f
+        month_dataset4.circleRadius = 5f
+
+        month_dataset5 = LineDataSet(month_chart_entries5,"")
+        month_dataset5.color = Color.rgb(181,217,233)
+        month_dataset5.setCircleColor(Color.rgb(181,217,233))
+        month_dataset5.lineWidth = 1f
+        month_dataset5.circleRadius = 5f
 
         line_data_list = ArrayList<ILineDataSet>()
         line_data_list.add(chart_dataset)
@@ -287,6 +405,13 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
         line_data_list.add(chart_dataset3)
         line_data_list.add(chart_dataset4)
         line_data_list.add(chart_dataset5)
+
+        month_data_list = ArrayList<ILineDataSet>()
+        month_data_list.add(month_dataset)
+        month_data_list.add(month_dataset2)
+        month_data_list.add(month_dataset3)
+        month_data_list.add(month_dataset4)
+        month_data_list.add(month_dataset5)
 
         val quarters = arrayOf("월", "화", "수", "목","금","토","일")
 
@@ -325,7 +450,45 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
         val des = Description()
         des.text = ""
 
+        val month_quarters = arrayOf("1월", "2월", "3월", "4월","5월","6월","7월","8월","9월","10월","11월","12월")
+
+        val month_formatter = object : IAxisValueFormatter {
+
+            // we don't draw numbers, so no decimal digits needed
+            val decimalDigits: Int
+                get() = 0
+
+            override fun getFormattedValue(value: Float, axis: AxisBase): String {
+                return month_quarters[value.toInt()-1]
+            }
+        }
+
+        val month_xAxis = month_chart.getXAxis()
+        month_xAxis.setPosition(XAxis.XAxisPosition.BOTTOM)
+        month_xAxis.granularity = 1f
+        month_xAxis.setValueFormatter(month_formatter)
+        month_xAxis.setDrawLabels(true)
+        month_xAxis.setDrawGridLines(false)
+        month_xAxis.setTextColor(Color.BLACK)
+
+
+        val month_yLAxis = month_chart.axisLeft
+        month_yLAxis.setTextColor(Color.BLACK)
+        month_yLAxis.granularity =5f
+//        yLAxis.setLabelCount(5,true)
+
+//        yLAxis.setDrawGridLines(false)
+
+        val month_yRAxis = month_chart.getAxisRight()
+        month_yRAxis.setDrawLabels(false)
+        month_yRAxis.setDrawAxisLine(false)
+        month_yRAxis.setDrawGridLines(false)
+
+        val month_des = Description()
+        month_des.text = ""
+
         chart_data = LineData(line_data_list)
+        month_data = LineData(month_data_list)
 
         chart.isDoubleTapToZoomEnabled = false
         chart.setDrawGridBackground(false)
@@ -336,8 +499,16 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
         chart.setBorderColor(R.color.colorPrimary)
 
         chart.setBackgroundColor(resources.getColor(R.color.white))
-        chart.animateY(5000)
-        chart.invalidate()
+
+        month_chart.isDoubleTapToZoomEnabled = false
+        month_chart.setDrawGridBackground(false)
+        month_chart.data = month_data
+        month_chart.description = month_des
+        month_chart.legend.isEnabled = false
+//        chart.setDraw Borders(false)
+        month_chart.setBorderColor(R.color.colorPrimary)
+
+        month_chart.setBackgroundColor(resources.getColor(R.color.white))
 
     }
 
@@ -400,72 +571,98 @@ class ChartActivity :  AppCompatActivity(), NavigationView.OnNavigationItemSelec
     {
         when(msg.what)
         {
-        //바른자세
+            //바른자세
             1 ->
             {
                 main_txt_point.text = Constant.money.toString();
-                Log.d("MainActivity","바른자세")
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_good_hour.text = (Constant.Right_time/3600).toString()
+                main_txt_good_min.text = ((Constant.Right_time/60)%60).toString()
 
             }
-        //기댄 자세
+            //기댄 자세
             2 ->
             {
-                tts.speak("기대지 마세요", TextToSpeech.QUEUE_FLUSH,null,null)
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_bad_hour.text = (Constant.bad_time/3600).toString()
+                main_txt_bad_min.text = ((Constant.bad_time/60)%60).toString()
+                tts.speak("기대지 마세요",TextToSpeech.QUEUE_FLUSH,null,null)
+                //   val dialog = PopupDialog(this@MainActivity, "뒤로 기댄 자세입니다.")
                 if(dialog.isShowing()) {
                     dialog.dismiss()
 
                 }
-                dialog = PopupDialog(this@ChartActivity,"기댄 자세입니다.")
-                dialog.show()
-                dialog.setClick {
-                    dialog.dismiss();
+                if (!(this as Activity).isFinishing) {
+                    dialog = PopupDialog(this,"뒤로 기댄 자세입니다.")
+                    dialog.show()
+                    dialog.setClick {
+                        dialog.dismiss();
+                    }
                 }
             }
-        //숙인 자세
+            //숙인 자세
             3 ->
             {
-                tts.speak("숙이지 마세요!", TextToSpeech.QUEUE_FLUSH,null,null)
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_bad_hour.text = (Constant.bad_time/3600).toString()
+                main_txt_bad_min.text = ((Constant.bad_time/60)%60).toString()
+                tts.speak("숙이지 마세요!",TextToSpeech.QUEUE_FLUSH,null,null)
                 //val dialog = PopupDialog(this@MainActivity, "앞으로 숙인 자세입니다.")
                 if(dialog.isShowing()) {
                     dialog.dismiss()
                 }
-                dialog = PopupDialog(this@ChartActivity,"앞으로 숙인 자세입니다.")
-                dialog.show()
-                dialog.setClick {
-                    dialog.dismiss()
+                if (!(this as Activity).isFinishing) {
+                    dialog = PopupDialog(this,"앞으로 숙인 자세입니다.")
+                    dialog.show()
+                    dialog.setClick {
+                        dialog.dismiss();
+                    }
                 }
 
             }
-        //다리 꼰 자세
+            //다리 꼰 자세
             4 ->
             {
-                tts.speak("다리 꼬지 마세요", TextToSpeech.QUEUE_FLUSH,null,null)
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_bad_hour.text = (Constant.bad_time/3600).toString()
+                main_txt_bad_min.text = ((Constant.bad_time/60)%60).toString()
+                tts.speak("다리 꼬지 마세요",TextToSpeech.QUEUE_FLUSH,null,null)
                 //   val dialog = PopupDialog(this@MainActivity, "왼쪽 다리를 꼰 자세입니다.")
                 if(dialog.isShowing()) {
                     dialog.dismiss()
 
                 }
-                dialog = PopupDialog(this@ChartActivity,"왼쪽 다리를 꼰 상태입니다.")
-                dialog.show()
-                dialog.setClick {
-                    dialog.dismiss();
+                if (!(this as Activity).isFinishing) {
+                    dialog = PopupDialog(this,"왼쪽 다리를 꼰 상태입니다.")
+                    dialog.show()
+                    dialog.setClick {
+                        dialog.dismiss();
+                    }
                 }
             }
-        //다리 꼰 자세
-            5 ->
-            {
-                tts.speak("다리 꼬지 마세요", TextToSpeech.QUEUE_FLUSH,null,null)
+            //다리 꼰 자세
+            5 -> {
+                main_txt_total_hour.text = (Constant.total_time / 3600).toString()
+                main_txt_total_min.text = ((Constant.total_time / 60) % 60).toString()
+                main_txt_bad_hour.text = (Constant.bad_time / 3600).toString()
+                main_txt_bad_min.text = ((Constant.bad_time / 60) % 60).toString()
+                tts.speak("다리 꼬지 마세요", TextToSpeech.QUEUE_FLUSH, null, null)
                 //val dialog = PopupDialog(this@MainActivity, "오른쪽 다리를 꼰 자세입니다.")
-                if(dialog.isShowing()) {
+                if (dialog.isShowing()) {
                     dialog.dismiss()
 
                 }
-                dialog = PopupDialog(this@ChartActivity,"오른쪽 다리를 꼰 상태입니다.")
-                dialog.show()
-                dialog.setClick {
-                    dialog.dismiss();
+                if (!(this as Activity).isFinishing) {
+                    dialog = PopupDialog(this, "오른쪽 다리를 꼰 상태입니다.")
+                    dialog.show()
+                    dialog.setClick {
+                        dialog.dismiss();
+                    }
                 }
-
             }
         }
     }

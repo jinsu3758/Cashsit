@@ -32,8 +32,6 @@ import java.io.ByteArrayOutputStream
 
 class SignInActivity : AppCompatActivity(),BluetoothCallback, SignInContract.VIew {
 
-
-
     private lateinit var presenter : SignInPresenter
     private lateinit var glideModule: RequestManager
     private  var profile_bitmap: Bitmap? = null

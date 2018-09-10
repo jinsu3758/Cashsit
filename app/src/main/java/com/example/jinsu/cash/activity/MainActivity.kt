@@ -26,6 +26,9 @@ import kotlinx.android.synthetic.main.content_main.view.*
 import kotlinx.android.synthetic.main.navi_header.view.*
 import java.lang.ref.WeakReference
 import java.util.*
+import android.app.Activity
+
+
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -113,68 +116,97 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             1 ->
             {
                 main_txt_point.text = Constant.money.toString();
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_good_hour.text = (Constant.Right_time/3600).toString()
+                main_txt_good_min.text = ((Constant.Right_time/60)%60).toString()
                 Log.d("MainActivity","바른자세")
 
             }
         //기댄 자세
             2 ->
             {
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_bad_hour.text = (Constant.bad_time/3600).toString()
+                main_txt_bad_min.text = ((Constant.bad_time/60)%60).toString()
                 tts.speak("기대지 마세요",TextToSpeech.QUEUE_FLUSH,null,null)
                 //   val dialog = PopupDialog(this@MainActivity, "뒤로 기댄 자세입니다.")
                 if(dialog.isShowing()) {
                     dialog.dismiss()
 
                 }
-                dialog = PopupDialog(this@MainActivity,"기댄 자세입니다.")
-                dialog.show()
-                dialog.setClick {
-                    dialog.dismiss();
+                if (!(this as Activity).isFinishing) {
+                    dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
+                    dialog.show()
+                    dialog.setClick {
+                        dialog.dismiss();
+                    }
                 }
             }
         //숙인 자세
             3 ->
             {
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_bad_hour.text = (Constant.bad_time/3600).toString()
+                main_txt_bad_min.text = ((Constant.bad_time/60)%60).toString()
                 tts.speak("숙이지 마세요!",TextToSpeech.QUEUE_FLUSH,null,null)
                 //val dialog = PopupDialog(this@MainActivity, "앞으로 숙인 자세입니다.")
                 if(dialog.isShowing()) {
                     dialog.dismiss()
                 }
-                dialog = PopupDialog(this@MainActivity,"앞으로 숙인 자세입니다.")
-                dialog.show()
-                dialog.setClick {
-                    dialog.dismiss()
+                if (!(this as Activity).isFinishing) {
+                    dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
+                    dialog.show()
+                    dialog.setClick {
+                        dialog.dismiss();
+                    }
                 }
 
             }
         //다리 꼰 자세
             4 ->
             {
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_bad_hour.text = (Constant.bad_time/3600).toString()
+                main_txt_bad_min.text = ((Constant.bad_time/60)%60).toString()
                 tts.speak("다리 꼬지 마세요",TextToSpeech.QUEUE_FLUSH,null,null)
                 //   val dialog = PopupDialog(this@MainActivity, "왼쪽 다리를 꼰 자세입니다.")
                 if(dialog.isShowing()) {
                     dialog.dismiss()
 
                 }
-                dialog = PopupDialog(this@MainActivity,"왼쪽 다리를 꼰 상태입니다.")
-                dialog.show()
-                dialog.setClick {
-                    dialog.dismiss();
+                if (!(this as Activity).isFinishing) {
+                    dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
+                    dialog.show()
+                    dialog.setClick {
+                        dialog.dismiss();
+                    }
                 }
             }
         //다리 꼰 자세
             5 ->
             {
+                main_txt_total_hour.text = (Constant.total_time/3600).toString()
+                main_txt_total_min.text = ((Constant.total_time/60)%60).toString()
+                main_txt_bad_hour.text = (Constant.bad_time/3600).toString()
+                main_txt_bad_min.text = ((Constant.bad_time/60)%60).toString()
                 tts.speak("다리 꼬지 마세요",TextToSpeech.QUEUE_FLUSH,null,null)
                 //val dialog = PopupDialog(this@MainActivity, "오른쪽 다리를 꼰 자세입니다.")
                 if(dialog.isShowing()) {
                     dialog.dismiss()
 
                 }
-                dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
-                dialog.show()
-                dialog.setClick {
-                    dialog.dismiss();
+                if (!(this as Activity).isFinishing) {
+                    dialog = PopupDialog(this@MainActivity,"오른쪽 다리를 꼰 상태입니다.")
+                    dialog.show()
+                    dialog.setClick {
+                        dialog.dismiss();
+                    }
                 }
+
 
             }
         }
@@ -216,6 +248,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onDestroy() {
         super.onDestroy()
+
         handler.removeMessages(0)
         tts.stop()
         tts.shutdown()

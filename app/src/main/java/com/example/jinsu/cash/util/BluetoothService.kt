@@ -255,7 +255,7 @@ class BluetoothService private constructor()  {
     private inner class ConnectedThread(private val mmSocket: BluetoothSocket) : Thread() {
         private val mmInStream: InputStream?
         private val mmOutStream: OutputStream?
-
+        var pointcnt = 0
         init {
             var tmpIn: InputStream? = null
             var tmpOut: OutputStream? = null
@@ -287,10 +287,15 @@ class BluetoothService private constructor()  {
                         m.what = 9
                         m.data = bd
                         Log.d("Message",m.toString())
-                        handler!!.sendMessage(m)
+                        if(handler!=null)
+                            handler!!.sendMessage(m)
                     }
                     else if(String(buffer)[0] == 'a'){
-                        Constant.money+=3
+                        pointcnt++
+                        if(pointcnt == 3) {
+                            Constant.money += 3
+                            pointcnt=0
+                        }
                         Constant.total_time+=3
                         Constant.Right_time+=3
                         Constant.Posture = 1
@@ -300,7 +305,8 @@ class BluetoothService private constructor()  {
                         m.what = Constant.Posture
                         m.data = bd
                         Log.d("Message",m.toString())
-                        handler!!.sendMessage(m)
+                        if(handler!=null)
+                            handler!!.sendMessage(m)
 
                     }
                     else if(String(buffer)[0] == 'f'){
@@ -313,7 +319,8 @@ class BluetoothService private constructor()  {
                         m.what = Constant.Posture  //앞으로 숙인 자세
                         m.data = bd
                         Log.d("Message",m.toString())
-                        handler!!.sendMessage(m)
+                        if(handler!=null)
+                            handler!!.sendMessage(m)
                     }
                     else if(String(buffer)[0] == 'b'){
                         Constant.total_time+=3
@@ -325,7 +332,8 @@ class BluetoothService private constructor()  {
                         m.what = Constant.Posture
                         m.data = bd
                         Log.d("Message",m.toString())
-                        handler!!.sendMessage(m)
+                        if(handler!=null)
+                            handler!!.sendMessage(m)
                     }
                     else if(String(buffer)[0] == 'r'){
                         Constant.total_time+=3
@@ -337,7 +345,8 @@ class BluetoothService private constructor()  {
                         m.what = Constant.Posture
                         m.data = bd
                         Log.d("Message",m.toString())
-                        handler!!.sendMessage(m)
+                        if(handler!=null)
+                            handler!!.sendMessage(m)
                     }
                     else if(String(buffer)[0] == 'l'){
                         Constant.total_time+=3
@@ -349,7 +358,8 @@ class BluetoothService private constructor()  {
                         m.what = Constant.Posture
                         m.data = bd
                         Log.d("Message",m.toString())
-                        handler!!.sendMessage(m)
+                        if(handler!=null)
+                            handler!!.sendMessage(m)
                     }
                     Log.d("자세", ""+Constant.Posture)
                     Log.d("바른자세", Constant.Right_time.toString())

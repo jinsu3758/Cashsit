@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\jinsu\\AndroidStudioProjects\\Cash\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
+            "outputFile": "C:\\Users\\ccu03\\Desktop\\Cashsit\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jinsu\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7c39e7dedb4485ba11d997588e213d2b\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\ccu03\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\28bce808d1b1ba644f69e1e93fbc20ca\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\jinsu\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5bf3b6f166276abf7b85e2fae5030ece\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\ccu03\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\164b5774f2c256ae2dc19a5470a615db\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

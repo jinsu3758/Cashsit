@@ -99,8 +99,8 @@ class LoginActivity : AppCompatActivity(),LoginContract.VIew,BluetoothCallback {
                 Log.d("sit_service","서비스 호출")
             sitIntent = Intent(this, SitService ::class.java)
             try {
-                val mainFilter = IntentFilter("make.a.yong.sit")
-                registerReceiver(receiver, mainFilter)
+//                val mainFilter = IntentFilter("make.a.yong.sit")
+//                registerReceiver(receiver, mainFilter)
                 startService(sitIntent)
 
             } catch (e: Exception) {
